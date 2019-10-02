@@ -20,16 +20,16 @@ class Login{
         <div class="card card-signin my-5">
           <div class="card-body">
             <h5 class="card-title text-center">Log in</h5>
-            <form class="form-signin">
+            <form class="form-signin" action='../Controllers/Login_Controller.php' method='post'>
               <div class="form-label-group">
 			  <label for="inputEmail">Usuario</label>
-                <input type="email" id="login" class="form-control" placeholder="Usuario" required autofocus>
+				<input type="text" id="login" name="login" class="form-control" placeholder="Usuario" required autofocus>
                 
               </div>
 
               <div class="form-label-group">
 			  	<label for="inputPassword">Password</label>
-                <input type="password" id="password" class="form-control" placeholder="Contraseña" required>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required>
                 
               </div>
 
@@ -39,7 +39,7 @@ class Login{
 			  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Log in</button>
 			  
 			  <label for="inputPassword">¿No Estas Registrado?</label>
-			  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Registrarse</button>
+			  <button class="btn btn-lg btn-primary btn-block text-uppercase">Registrarse</button>
             </form>
           </div>
         </div>
