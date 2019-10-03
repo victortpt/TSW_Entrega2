@@ -1,0 +1,231 @@
+body {
+    background: #F9F9F9;
+  }
+  
+  .card-signin {
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-signin .card-title {
+    margin-bottom: 2rem;
+    font-weight: 300;
+    font-size: 1.5rem;
+  }
+  
+  .card-signin .card-body {
+    padding: 2rem;
+  }
+  
+  .form-signin {
+    width: 100%;
+  }
+  
+  .form-signin .btn {
+    font-size: 80%;
+    border-radius: 5rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+    padding: 1rem;
+  }
+  
+  .form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  .form-label-group input {
+    height: auto;
+    border-radius: 2rem;
+  }
+  .tagRegistrarse{
+      margin-top: 15px;
+      font-size: 15px;
+  }
+
+
+
+
+
+
+
+
+
+.cabecera{
+    display: block;
+    padding: 10px;
+    background-color: #F9F9F9;
+}
+
+.nuevo{
+    text-decoration:none;
+    color: black;
+    font-size: 22px;
+}
+
+.nuevo:hover{
+    text-decoration:none;
+    color: black;
+}
+
+.ruta
+{
+text-decoration:none;
+color: black;
+font-size: 20px;
+margin-right: 6px;
+}
+
+.ruta2
+{
+text-decoration:none;
+margin-top: 7px;
+color: black;
+font-size: 15px;
+margin-right: 6px;
+}
+
+.ruta:hover 
+{
+    text-decoration:none;
+    color: #5AEC53;
+}
+
+.contenedor-ruta{
+    padding: 10px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #CBCBCB;
+}
+
+
+
+.contenedor-carpeta{
+    padding: 20px; 
+}
+
+.icono-imagen{
+    font-size: 35px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.caja-logout{
+    margin-top: 10px;
+    height: 30px;
+}
+
+.caja-busqueda{
+    margin-top: 10px;
+}
+
+.tipo-archivo{
+    margin: 10px;
+    margin-top: 20px;
+}
+
+.texto-tarjeta{
+    padding-top: 4px;
+}
+
+
+.caja-nombre-archivo:hover{
+    background-color: #DDF8DC;
+}
+
+.img-caja{
+    margin: 10px;
+    padding-left: 60px;
+}
+
+
+.pdf{
+    font-size: 125px;
+}
+
+.card-title{
+    padding-top:10px;
+}
+
+.carpeta:hover{
+    background-color: #DDF8DC;
+}
+
+.opcion{
+    text-decoration:none;
+    margin-bottom: 20px;
+    color: black;
+    font-size: 17px;
+    width: 75%;
+}
+.opcion:hover 
+{
+    text-decoration:none;
+    color: black;
+    width: 75%;
+}
+
+.icono-opcion{
+    font-size: 20px;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-top: 3px;
+}
+
+.fila-opcion{
+    padding-top: 18px;
+    margin-right: 30px;
+}
+.fila-opcion:hover{
+    background-color: #DDF8DC;
+    border-right: solid #DDF8DC; 
+    margin-right: 30px;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.registro {
+    margin-top: 80px;
+    padding: 10px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #CBCBCB;
+}
+
+.form-registro{
+    background-color: #999999;
+    border-radius: 15px;
+    height: 550px;
+    width: 350px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    align-self: center;
+}
+
+.input {
+    border-radius: 10px;
+    background-color: #999999;
+    border-color: #C377BC;
+}
+
+
+#selectGrupo {
+    border-radius: 10px;
+    background-color: #999999;
+    border-color: #C377BC;
+
+}
+
+select option:hover {
+    box-shadow:  0 0 10px 100px #C377BC inset;
+}
+
+
+#btnRegistro:hover {
+    background-color:  #C377BC;
+    border-radius: 10px;
+}
+
+  

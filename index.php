@@ -11,7 +11,7 @@ if (!IsAuthenticated()){
     //header apunta al Register_Controller
 	header('Location:./Controllers/Login_Controller.php');
 }else{
-    header('Location:./Controllers/Carpeta_Controller.php');
+    header('Location:./Controllers/Carpeta_Controller.php?action=ShowallRaiz');
 }
 
 

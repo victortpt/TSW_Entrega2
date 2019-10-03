@@ -105,6 +105,8 @@ function registrar(){
 		}	
 
 	}
+
+	
 }//fin de clase
 
 ?> 

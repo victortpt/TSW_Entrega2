@@ -46,6 +46,29 @@ UNIQUE KEY `email` (`email`)
 
 
 
+CREATE TABLE IF NOT EXISTS `CARPETA` (
+
+`uid` int(4) NOT NULL AUTO_INCREMENT,
+
+`nombre` varchar(30) NOT NULL,
+
+`padre` int(4),
+
+`fecha` date NOT NULL,
+
+`autor` varchar(15) NOT NULL,
+
+PRIMARY KEY (`uid`),
+
+FOREIGN KEY (padre) REFERENCES CARPETA(uid) ON DELETE CASCADE,
+
+FOREIGN KEY (autor) REFERENCES USUARIO(login) ON DELETE CASCADE
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
 CREATE TABLE IF NOT EXISTS `FICHERO` (
 
 `id` int(4) NOT NULL AUTO_INCREMENT,
@@ -56,31 +79,13 @@ CREATE TABLE IF NOT EXISTS `FICHERO` (
 
 `fecha` date NOT NULL,
 
+`padre` int(4),
+
 `autor` varchar(15) NOT NULL,
 
 PRIMARY KEY (`id`),
 
-FOREIGN KEY (autor) REFERENCES USUARIO(login) ON DELETE CASCADE
-
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-CREATE TABLE IF NOT EXISTS `CARPETA` (
-
-`uid` int(4) NOT NULL AUTO_INCREMENT,
-
-`nombre` varchar(30) NOT NULL,
-
-`padre` int(4) NOT NULL,
-
-`fecha` date NOT NULL,
-
-`autor` varchar(15) NOT NULL,
-
-PRIMARY KEY (`uid`),
-
-FOREIGN KEY (padre) REFERENCES FICHERO(id) ON DELETE CASCADE,
+FOREIGN KEY (padre) REFERENCES CARPETA(uid) ON DELETE CASCADE,
 
 FOREIGN KEY (autor) REFERENCES USUARIO(login) ON DELETE CASCADE
 
@@ -88,5 +93,23 @@ FOREIGN KEY (autor) REFERENCES USUARIO(login) ON DELETE CASCADE
 
 
 INSERT INTO `USUARIO`(`login`, `password`, `nombre`, `apellidos`, `email`, `uso`) VALUES ("admin","admin","admin","admin", "admin@gmail.com", "profesional");
+INSERT INTO `CARPETA`(`uid`, `nombre`, `padre`, `fecha`, `autor`) VALUES (NULL,"TSW",NULL,"1000-01-01","admin");
+INSERT INTO `CARPETA`(`uid`, `nombre`, `padre`, `fecha`, `autor`) VALUES (NULL,"ABP",1,"1000-01-01","admin");
+
+INSERT INTO `CARPETA`(`uid`, `nombre`, `padre`, `fecha`, `autor`) VALUES (NULL,"ES",NULL,"1000-01-01","admin");
+INSERT INTO `CARPETA`(`uid`, `nombre`, `padre`, `fecha`, `autor`) VALUES (NULL,"PS",2,"1000-01-01","admin");
+INSERT INTO `CARPETA`(`uid`, `nombre`, `padre`, `fecha`, `autor`) VALUES (NULL,"DGP",1,"1000-01-01","admin");
+INSERT INTO `CARPETA`(`uid`, `nombre`, `padre`, `fecha`, `autor`) VALUES (NULL,"PROII",2,"1000-01-01","admin");
+INSERT INTO `CARPETA`(`uid`, `nombre`, `padre`, `fecha`, `autor`) VALUES (NULL,"TS",NULL,"1000-01-01","admin");
+INSERT INTO `CARPETA`(`uid`, `nombre`, `padre`, `fecha`, `autor`) VALUES (NULL,"P",3,"1000-01-01","admin");
+INSERT INTO `CARPETA`(`uid`, `nombre`, `padre`, `fecha`, `autor`) VALUES (NULL,"P",5,"1000-01-01","admin");
+
+
+INSERT INTO `FICHERO`(`id`, `nombre`, `mime`, `fecha`, `padre`, `autor`) VALUES (NULL,"archivo1.xd",'application/pdf',"1000-01-01",NULL,"admin");
+INSERT INTO `FICHERO`(`id`, `nombre`, `mime`, `fecha`, `padre`, `autor`) VALUES (NULL,"archivo2.xd",'application/pdf',"1000-01-01",NULL,"admin");
+INSERT INTO `FICHERO`(`id`, `nombre`, `mime`, `fecha`, `padre`, `autor`) VALUES (NULL,"archivo3.xd",'application/pdf',"1000-01-01",3,"admin");
+INSERT INTO `FICHERO`(`id`, `nombre`, `mime`, `fecha`, `padre`, `autor`) VALUES (NULL,"archivo4.xd",'application/pdf',"1000-01-01",2,"admin");
+INSERT INTO `FICHERO`(`id`, `nombre`, `mime`, `fecha`, `padre`, `autor`) VALUES (NULL,"archivo5.xd",'application/pdf',"1000-01-01",5,"admin");
+INSERT INTO `FICHERO`(`id`, `nombre`, `mime`, `fecha`, `padre`, `autor`) VALUES (NULL,"archivo6.xd",'application/pdf',"1000-01-01",5,"admin");
 
 

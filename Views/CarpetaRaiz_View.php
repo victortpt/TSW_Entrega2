@@ -4,11 +4,11 @@
 class CarpetaRaiz{
 
 
-	function __construct(){ 
-		$this->render();
+	function __construct($carpetas, $carpetas2, $ficheros, $ficheros2){ 
+		$this->render( $carpetas, $carpetas2, $ficheros, $ficheros2);
 	}
 
-	function render(){
+	function render($carpetas, $carpetas2, $ficheros, $ficheros2){
 
 		include '../Views/Header.php'; //header necesita los strings
 	?>
@@ -20,6 +20,7 @@ class CarpetaRaiz{
                         <a href="#" class="nuevo">Nuevo</a>
                     </div>
                     <div class="col-sm-10">
+
                         <a href="#" class="ruta">Mi Unidad</a><span class="fas fa-chevron-right ruta2"></span><a href="#" class="ruta">4 Informatica</a>
                     </div>
                     
@@ -46,69 +47,74 @@ class CarpetaRaiz{
                                 <a href="#" class="opcion">Papelera</a>
                             </div>
                         </div>
+<?php                   
+                        $row2 = $carpetas2->fetch_array();
+                        if(!sizeof($row2) == 0){
+?>
                         <div class="col-sm-10">
-                            <div class="row">
-                                <h5 class="tipo-archivo">Carpetas</h5>
-                            </div>
-                            <div class="row">
+                        <div class="row">
+                            <h5 class="tipo-archivo">Carpetas</h5>
+                        </div>
+                        <div class="row">
+<?php
+                        }
+                        else{
+?>
+                        <div class="col-sm-10">
+                        <div class="row">
+                            <h5 class="tipo-archivo">No hay Archivos</h5>
+                        </div>
+                        <div class="row">
+<?php
+                        }
+                        while($row = $carpetas->fetch_array()){ //Para cada contrato dentro de cada centro
+?>                      
                                 <div class="card carpeta" style="width: 15rem; margin-right: 25px;">
+                                    <a href="../Controllers/Carpeta_Controller.php?action=Showall&idCarpetaPadre=<?php echo $row['uid']?>">
                                         <div class="card-body">
-                                                <div class="row">
-                                                    <i class="fas fa-folder icono-imagen"></i>
-                                                    <p class="texto-tarjeta">TSW</p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <div class="card carpeta" style="width: 15rem; margin-right: 25px;">
-                                        <div class="card-body">
-                                                <div class="row">
-                                                    <span class="fas fa-folder icono-imagen"></span>
-                                                    <p class="texto-tarjeta">ABP</p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <div class="card carpeta" style="width: 15rem; margin-right: 25px;">
-                                        <div class="card-body cuerpo-tarjeta">
                                             <div class="row">
                                                 <i class="fas fa-folder icono-imagen"></i>
-                                                <p class="texto-tarjeta">Dispositivos móviles</p>
+                                                <p class="texto-tarjeta"><?php echo $row['nombre']?></p>
                                             </div>
                                         </div>
-                                </div>      
-                            </div>
-                                <h5 class="tipo-archivo">Archivos</h5>
-                            <div>
-                            <div class="row">
-                                    <div class="card" style="width: 15rem; margin-right: 25px;">
+                                    </a>    
+                                </div>
+<?php
+                        } //Fin while contratos dentro de cada centro
+                 
+                        $row4 = $ficheros2->fetch_array();
+                        if(!sizeof($row2) == 0){
+?>
+                        <div class="col-sm-10">
+                        <div class="row">
+                            <h5 class="tipo-archivo">Ficheros</h5>
+                        </div>
+                        <div class="row">
+<?php
+                        }
+                        else{
+?>
+                        <div class="col-sm-10">
+                        <div class="row">
+                            <h5 class="tipo-archivo">No hay Ficheros</h5>
+                        </div>
+                        <div class="row">
+<?php
+                        }
+                        while($row3 = $ficheros->fetch_array()){ //Para cada contrato dentro de cada centro
+?>                      
+                                <div class="card" style="width: 15rem; margin-right: 25px;">
                                             <div class="img-caja">
                                                 <span class="fas fa-file-pdf pdf"></span>
                                             </div>
                                             <div class="card-body caja-nombre-archivo">
-                                                <h6 class="card-title">archivo.xlsx</h6>
+                                                <h6 class="card-title"><?php echo $row3['nombre']?></h6>
                                             </div>
-                                    </div>
-                                    <div class="card" style="width: 15rem; margin-right: 25px;">
-                                            <div class="img-caja">
-                                                <span class="fas fa-file-word pdf"></span>
-                                            </div>
-                                            <div class="card-body caja-nombre-archivo">
-                                                <h6 class="card-title">prueba.pdf</h6>
-                                            </div>
-                                    </div>
-                                    <div class="card" style="width: 15rem; margin-right: 25px;">
-                                            <div class="img-caja">
-                                                <span class="fas fa-file-image pdf"></span>
-                                            </div>
-                                            <div class="card-body caja-nombre-archivo">
-                                                <h6 class="card-title">imagen.jpg</h6>
-                                            </div>
-                                    </div>      
                                 </div>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<?php
+                        } //Fin while contratos dentro de cada centro
+?>
+                               
 </body>
 	<?php
 		include '../Views/Footer.php';

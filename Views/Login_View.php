@@ -22,13 +22,11 @@ class Login{
             <h5 class="card-title text-center">Log in</h5>
             <form class="form-signin" action='../Controllers/Login_Controller.php' method='post'>
               <div class="form-label-group">
-			  <label for="inputEmail">Usuario</label>
 				<input type="text" id="login" name="login" class="form-control" placeholder="Usuario" required autofocus>
                 
               </div>
 
               <div class="form-label-group">
-			  	<label for="inputPassword">Password</label>
                 <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña" required>
                 
               </div>
@@ -38,7 +36,7 @@ class Login{
               </div>
 			  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Log in</button>
 			  
-			  <label for="inputPassword">¿No Estas Registrado?</label>
+			  <label class="tagRegistrarse">¿No estás registrado?</label>
 			  <button class="btn btn-lg btn-primary btn-block text-uppercase">Registrarse</button>
             </form>
           </div>
