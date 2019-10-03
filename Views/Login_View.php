@@ -35,10 +35,14 @@ class Login{
                 <input type="checkbox" class="custom-control-input" id="customCheck1">
               </div>
 			  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Log in</button>
-			  
-			  <label class="tagRegistrarse">¿No estás registrado?</label>
-			  <button class="btn btn-lg btn-primary btn-block text-uppercase">Registrarse</button>
-            </form>
+
+        
+          </form>
+
+          <label class="tagRegistrarse">¿No estás registrado?</label>
+        <form class="form-signup" action='../Controllers/Register_Controller.php' method='post'>
+             <button class="btn btn-lg btn-primary btn-block text-uppercase">Registrarse</button>
+        </form>
           </div>
         </div>
       </div>
